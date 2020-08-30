@@ -3018,16 +3018,17 @@ button:disabled,
 
 #header {
   padding: 9em 0 9em 0;
-  background-color: #4686a0;
+  background-color: #fff;
   color: rgba(255, 255, 255, 0.75);
-  background-attachment: fixed, fixed, fixed;
-  background-image: url("images/overlay2.png"), url("images/overlay3.svg"),
-    linear-gradient(45deg, #000000 5%, #424242 30%, #000000);
-  background-position: top left, center center, center center;
-  background-size: auto, cover, cover;
+  background-image: url("images/background1.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
-  position: relative;
   text-align: center;
+  height: fit-content;
+  position: relative;
 }
 
 #header a {
@@ -3150,6 +3151,7 @@ button:disabled,
 }
 
 #header .inner {
+  min-height: 100%;
   -moz-transition: -moz-transform 1.5s ease, opacity 2s ease;
   -webkit-transition: -webkit-transform 1.5s ease, opacity 2s ease;
   -ms-transition: -ms-transform 1.5s ease, opacity 2s ease;
@@ -3163,8 +3165,6 @@ button:disabled,
   -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1;
-  position: relative;
-  z-index: 1;
 }
 
 #header .inner .actions {
@@ -3188,14 +3188,21 @@ button:disabled,
   -webkit-transition: opacity 1s ease;
   -ms-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background-image: linear-gradient(45deg, #4fa49a, #4361c2);
-  content: "";
+  padding: 9em 0 9em 0;
+  background-color: #fff;
+  color: rgba(255, 255, 255, 0.75);
+  background-image: url("images/background1.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
   height: 100%;
+  position: relative;
   left: 0;
   opacity: 0;
-  position: absolute;
   top: 0;
-  width: 100%;
 }
 
 body.is-preload #header .inner {
@@ -3222,12 +3229,11 @@ body.is-preload #header:after {
 
 #footer {
   padding: 6em 0 6em 0;
-  background-color: #4686a0;
+  background-color: #fff;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: url("images/overlay2.png"), url("images/overlay4.svg"),
-    linear-gradient(45deg, #000000, #424242 50%, #000000 95%);
-  background-position: top left, center center, center center;
+  background-image: url("images/background.jpg");
+  background-position: bottom center;
   background-size: auto, cover, cover;
   text-align: center;
 }
