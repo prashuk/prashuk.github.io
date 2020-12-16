@@ -3021,8 +3021,26 @@ button:disabled,
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: url("images/overlay2.png"), url("images/overlay3.svg"),
-    linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+  background: rgb(0, 8, 48);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(0, 8, 48, 1) 0%,
+    rgba(12, 14, 61, 1) 39%,
+    rgba(0, 85, 99, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 8, 48, 1) 0%,
+    rgba(12, 14, 61, 1) 39%,
+    rgba(0, 85, 99, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 8, 48, 1) 0%,
+    rgba(12, 14, 61, 1) 39%,
+    rgba(0, 85, 99, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000830",endColorstr="#005563",GradientType=1);
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   overflow: hidden;
@@ -3225,8 +3243,26 @@ body.is-preload #header:after {
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: url("images/overlay2.png"), url("images/overlay4.svg"),
-    linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%);
+  background: rgb(0, 8, 48);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(0, 8, 48, 1) 0%,
+    rgba(12, 14, 61, 1) 39%,
+    rgba(0, 85, 99, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 8, 48, 1) 0%,
+    rgba(12, 14, 61, 1) 39%,
+    rgba(0, 85, 99, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 8, 48, 1) 0%,
+    rgba(12, 14, 61, 1) 39%,
+    rgba(0, 85, 99, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000830",endColorstr="#005563",GradientType=1);
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   text-align: center;
