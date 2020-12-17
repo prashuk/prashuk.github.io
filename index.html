@@ -26,6 +26,13 @@
       integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
       crossorigin="anonymous"
     />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    /> -->
   </head>
 
   <body class="is-preload">
@@ -36,7 +43,7 @@
           class="img-responsive"
           src="images/cover.png"
           alt="prashuk_ajmera_logo"
-          style="display: block; margin-right: auto; margin-left: auto"
+          style="width: 30%; margin-left: auto; margin-right: auto"
         />
         <ul class="actions special">
           <li>
@@ -77,14 +84,13 @@
               working around Machine Learning, Natural Language Processing and
               Artificial Intelligence concepts. Along with, he was also working
               as Research Assistant Frontend Web Developer at ATEC school.
+              <br />
+              <br />
               During his time in UTD he did a co-op as iOS Developer at Bose
-              Corporation, Boston MA in Fall'19.
-              <br />
-              <br />
-              He has over 4 years of professional work experience in iOS App
-              Development, Machine Learning and Full stack development. He
-              developed dozens of projects with Swift, Python, React, Vue,
-              JavaScript and MongoDB.
+              Corporation, Boston MA in Fall'19. He has over 4 years of
+              professional work experience in iOS App Development, Machine
+              Learning and Full stack development. He developed dozens of
+              projects with Swift, Python, React, Vue, JavaScript and MongoDB.
               <br />
               <br />
               His interests are in Web Development, Mobile Application
@@ -95,7 +101,7 @@
             </p>
           </div>
 
-          <div class="col-6 col-12-medium imp-medium">
+          <div class="col-6 col-12-medium">
             <span class="image fit">
               <img src="images/ecs_west.jpg" alt="utdallas_ecs_west" />
               <sub>
@@ -296,11 +302,13 @@
             <h5>Texas, USA</h5>
             <h4>Master of Science, Computer Science</h4>
             <p>August 2018 - December 2020</p>
-            <ul class="actions special">
-              <li>
-                <a href="https://www.utdallas.edu/" class="button">More</a>
-              </li>
-            </ul>
+            <button
+              type="button"
+              class="button"
+              onclick="window.open('https://www.utdallas.edu/','mywindow');"
+            >
+              More
+            </button>
           </div>
           <div class="col-6 col-12-medium">
             <span class="">
@@ -313,9 +321,13 @@
             <h5>Vellore, India</h5>
             <h4>Bachelor of Technology, Computer Science</h4>
             <p>July 2011 - May 2015</p>
-            <ul class="actions special">
-              <li><a href="https://vit.ac.in/" class="button">More</a></li>
-            </ul>
+            <button
+              type="button"
+              class="button"
+              onclick="window.open('https://vit.ac.in/','mywindow');"
+            >
+              More
+            </button>
           </div>
         </div>
       </div>
@@ -665,25 +677,32 @@
                 </ul>
               </td>
             </tr>
-            <tr>
-              <td>More to come...</td>
-            </tr>
           </tbody>
         </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </section>
 
-    <!-- Footer -->
-    <section id="footer">
+    <section id="six" class="main special">
       <div class="container">
         <div class="row gtr-150">
           <div class="col-4 col-12-medium">
-            <ul class="major-icons">
-              <li><span class="icon solid style1 major fa-phone"></span></li>
-            </ul>
-          </div>
-          <div class="col-8 col-12-medium">
             <header class="major">
+              <ul class="major-icons">
+                <li><span class="icon solid style1 major fa-code"></span></li>
+              </ul>
               <h2>Get In Touch</h2>
             </header>
             <b>
@@ -697,17 +716,27 @@
               <li>
                 <div
                   onclick="window.open('mailto:prashuk.ajmera@gmail.com');"
-                  class="button"
+                  class="button scrolly primary icon solid fa-highlighter"
+                  style="background-color: brown"
                 >
                   Say hi
                 </div>
               </li>
             </ul>
           </div>
+          <div class="col-8 col-12-medium">
+            <div id="map"></div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="col-8 col-12-medium" style="margin-top: 100px">
+    <!-- Footer -->
+    <section id="footer">
+      <div
+        class="col-8 col-12-medium"
+        style="margin-top: 80px; margin-bottom: 70px"
+      >
         <header class="major">
           <h2>Connect with me on</h2>
         </header>
@@ -763,13 +792,34 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script
+
+    <!-- <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <noscript>
+     <noscript>
       <link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
+    /></noscript> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQV7LA3oB7HTQCG-Lo-8YPlrf8Iy7Rs70&callback=initMap"
+      defer
+    ></script>
   </body>
 </html>

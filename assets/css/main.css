@@ -2910,7 +2910,6 @@ button:disabled,
 }
 
 /* Main */
-
 .main {
   padding: 6em 0 4em 0;
 }
@@ -2923,7 +2922,7 @@ button:disabled,
   background-color: #333;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed;
-  background-image: url("images/overlay1.png"), url("../../images/header.jpg");
+  background-image: url("images/backpattern.svg");
   background-size: auto, cover;
 }
 
@@ -3015,13 +3014,13 @@ button:disabled,
 }
 
 /* Header */
-
 #header {
   padding: 9em 0 9em 0;
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background: rgb(0, 8, 48);
+  background-image: url("images/backpattern.svg");
+  /* background: rgb(0, 8, 48);
   background: -moz-linear-gradient(
     45deg,
     rgba(0, 8, 48, 1) 0%,
@@ -3040,7 +3039,7 @@ button:disabled,
     rgba(12, 14, 61, 1) 39%,
     rgba(0, 85, 99, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000830",endColorstr="#005563",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000830",endColorstr="#005563",GradientType=1); */
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   overflow: hidden;
@@ -3236,14 +3235,19 @@ body.is-preload #header:after {
   opacity: 1;
 }
 
-/* Footer */
+#map {
+  height: 450px;
+  width: 100%;
+}
 
+/* Footer */
 #footer {
   padding: 6em 0 6em 0;
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background: rgb(0, 8, 48);
+  background-image: url("images/backpattern.svg");
+  /* background: rgb(0, 8, 48);
   background: -moz-linear-gradient(
     45deg,
     rgba(0, 8, 48, 1) 0%,
@@ -3262,7 +3266,7 @@ body.is-preload #header:after {
     rgba(12, 14, 61, 1) 39%,
     rgba(0, 85, 99, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000830",endColorstr="#005563",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000830",endColorstr="#005563",GradientType=1); */
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   text-align: center;
