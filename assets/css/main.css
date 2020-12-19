@@ -230,7 +230,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-  color: white;
+  color: darkgray;
 }
 
 .mobile-nav-active {
@@ -242,7 +242,7 @@ h6 {
 }
 
 .mobile-nav-active .mobile-nav-toggle i {
-  color: white;
+  color: darkgray;
 }
 
 /*--------------------------------------------------------------
