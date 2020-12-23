@@ -185,7 +185,6 @@
 })(jQuery);
 
 function initMap() {
-  console.log("object");
   const loc = { lat: 32.948334, lng: -96.729851 };
   const map = new google.maps.Map(document.getElementById("locationMap"), {
     zoom: 10,
