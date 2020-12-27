@@ -183,15 +183,3 @@
     aos_init();
   });
 })(jQuery);
-
-function initMap() {
-  const loc = { lat: 32.948334, lng: -96.729851 };
-  const map = new google.maps.Map(document.getElementById("locationMap"), {
-    zoom: 10,
-    center: loc,
-  });
-  const marker = new google.maps.Marker({
-    position: loc,
-    map: map,
-  });
-}

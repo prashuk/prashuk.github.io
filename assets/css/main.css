@@ -608,11 +608,6 @@ section {
   background: #fff;
 }
 
-#locationMap {
-  height: 100%;
-  width: 100%;
-}
-
 .contact .info i {
   font-size: 20px;
   color: black;
