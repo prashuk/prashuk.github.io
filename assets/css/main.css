@@ -483,6 +483,12 @@ section {
   z-index: 9994;
 }
 
+.portfolio .portfolio-wrap .portfolio-info h2 {
+  font-size: 24px;
+  color: black;
+  font-weight: bolder;
+}
+
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
   color: black;
