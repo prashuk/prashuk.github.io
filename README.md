@@ -1,4 +1,4 @@
-# My Portfolio - v3
+# My Portfolio
 
 Latest version of https://prashuk.co
 
