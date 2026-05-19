@@ -74,11 +74,9 @@ Save and reload the RSVP page. Submit a test RSVP and confirm a new row appears 
 |--------|------------|
 | Timestamp | Auto (submission time) |
 | Full Name | Required |
-| Email | Required |
 | Phone | Optional |
 | Attending | Yes / No / Maybe |
 | Guest Count | Shown when attending “Yes” |
-| Dietary | Optional |
 | Message | Optional |
 
 ## Notes

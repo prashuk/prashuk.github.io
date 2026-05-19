@@ -6,7 +6,7 @@
   <title>Baby Shower RSVP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,9 +23,6 @@
 
   <main class="card">
     <header class="hero">
-      <div class="photo-frame" aria-hidden="true">
-        <span class="frame-glow"></span>
-      </div>
       <img
         src="assets/baby-shower-photo.jpg"
         alt="Baby shower celebration"
@@ -35,84 +32,112 @@
       />
       <div class="hero-overlay">
         <p class="eyebrow">You're invited</p>
-        <h1>Baby Shower</h1>
-        <p class="subtitle">Pearls &amp; Little Blessings</p>
-        <p class="event-date" id="eventDate">Saturday, June 14, 2026 · 2:00 PM</p>
+        <h1 class="hero-title">Baby Shower</h1>
+        <p class="subtitle">
+          <span class="subtitle-part">Pearls</span>
+          <span class="subtitle-join">&amp;</span>
+          <span class="subtitle-part">Little Blessings</span>
+        </p>
+        <p class="event-date" id="eventDate">Saturday, June 20, 2026 · 4:00 PM</p>
+        <p class="event-address">
+          <svg class="location-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+          24914 118th Pl SE
+        </p>
       </div>
     </header>
 
-    <section class="form-section">
-      <h2>RSVP</h2>
-      <p class="form-intro">We can't wait to celebrate with you. Please respond by <strong>June 1, 2026</strong>.</p>
-
-      <form id="rsvpForm" novalidate>
-        <div class="field">
-          <label for="fullName">Full name <span class="req">*</span></label>
-          <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Your name" />
-        </div>
-
-        <div class="field">
-          <label for="email">Email <span class="req">*</span></label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@email.com" />
-        </div>
-
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" />
-        </div>
-
-        <div class="field">
-          <label>Will you attend? <span class="req">*</span></label>
-          <div class="radio-group" role="radiogroup" aria-required="true">
-            <label class="radio-pill">
-              <input type="radio" name="attending" value="Yes" required />
-              <span>Joyfully yes</span>
-            </label>
-            <label class="radio-pill">
-              <input type="radio" name="attending" value="No" />
-              <span>Regretfully no</span>
-            </label>
-            <label class="radio-pill">
-              <input type="radio" name="attending" value="Maybe" />
-              <span>Not sure yet</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="field" id="guestCountField">
-          <label for="guestCount">Number of guests (including you)</label>
-          <select id="guestCount" name="guestCount">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5+</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="dietary">Dietary restrictions or allergies</label>
-          <textarea id="dietary" name="dietary" rows="2" placeholder="Optional"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="message">Message for the parents-to-be</label>
-          <textarea id="message" name="message" rows="3" placeholder="We'd love to hear from you"></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn" id="submitBtn">
-          <span class="btn-text">Send RSVP</span>
-          <span class="btn-spinner" hidden aria-hidden="true"></span>
-        </button>
-      </form>
-
-      <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+    <section class="invite-section" aria-label="Invitation actions">
+      <p class="invite-note">We can't wait to celebrate with you.</p>
+      <p class="invite-deadline">Please RSVP by <strong>May 29, 2026</strong></p>
+      <div class="invite-actions">
+        <button type="button" class="btn-primary" id="openRsvpBtn">RSVP</button>
+        <a
+          class="btn-secondary"
+          href="https://www.amazon.com/baby-reg/prashuk-ajmera-august-2026-kent/1NBHJ6YVA07BQ?ref_=cm_sw_r_cp_ud_dp_0M6ZE8SPP3PTC31KHE6E"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View registry</a>
+      </div>
     </section>
 
     <footer class="card-footer">
-      <p>With love · Pearl-themed celebration</p>
+      <p>With love · Shraddha &amp; Prashuk</p>
     </footer>
   </main>
+
+  <div class="modal" id="rsvpModal" aria-hidden="true">
+    <button type="button" class="modal-backdrop" id="modalBackdrop" aria-label="Close RSVP form" tabindex="-1"></button>
+    <div
+      class="modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="rsvpModalTitle"
+    >
+      <button type="button" class="modal-close" id="closeRsvpBtn" aria-label="Close RSVP form">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <section class="form-section">
+        <h2 id="rsvpModalTitle">RSVP</h2>
+        <p class="form-intro">Let us know if you can join us.</p>
+
+        <form id="rsvpForm" novalidate>
+          <div class="field">
+            <label for="fullName">Full name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" />
+          </div>
+
+          <div class="field">
+            <label>Will you attend? <span class="req">*</span></label>
+            <div class="radio-group" role="radiogroup" aria-required="true">
+              <label class="radio-pill">
+                <input type="radio" name="attending" value="Yes" required />
+                <span>Joyfully yes</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="attending" value="No" />
+                <span>Regretfully no</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="attending" value="Maybe" />
+                <span>Not sure yet</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field" id="guestCountField">
+            <label for="guestCount">Number of guests <span class="req">*</span></label>
+            <select id="guestCount" name="guestCount" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message for the parents-to-be</label>
+            <textarea id="message" name="message" rows="3" placeholder="We'd love to hear from you"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="btn-text">Send RSVP</span>
+            <span class="btn-spinner" hidden aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

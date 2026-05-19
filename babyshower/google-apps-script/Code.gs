@@ -22,11 +22,9 @@ function setupSheet() {
   const headers = [
     "Timestamp",
     "Full Name",
-    "Email",
     "Phone",
     "Attending",
     "Guest Count",
-    "Dietary",
     "Message",
   ];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
@@ -65,11 +63,9 @@ function appendRow(data) {
   const row = [
     data.timestamp || new Date().toISOString(),
     data.fullName || "",
-    data.email || "",
     data.phone || "",
     data.attending || "",
     data.guestCount || "",
-    data.dietary || "",
     data.message || "",
   ];
 

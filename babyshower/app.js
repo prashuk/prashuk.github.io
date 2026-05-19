@@ -7,8 +7,11 @@ const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
   const btnText = submitBtn.querySelector(".btn-text");
   const btnSpinner = submitBtn.querySelector(".btn-spinner");
   const formStatus = document.getElementById("formStatus");
-  const guestCountField = document.getElementById("guestCountField");
-  const attendingInputs = form.querySelectorAll('input[name="attending"]');
+  const modal = document.getElementById("rsvpModal");
+  const openBtn = document.getElementById("openRsvpBtn");
+  const closeBtn = document.getElementById("closeRsvpBtn");
+  const backdrop = document.getElementById("modalBackdrop");
+  const modalDialog = modal.querySelector(".modal-dialog");
 
   function setLoading(loading) {
     submitBtn.disabled = loading;
@@ -21,16 +24,34 @@ const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
     formStatus.className = "form-status" + (type ? " " + type : "");
   }
 
-  function toggleGuestCount() {
-    const selected = form.querySelector('input[name="attending"]:checked');
-    const show = selected && selected.value === "Yes";
-    guestCountField.classList.toggle("hidden", !show);
+  function openModal() {
+    setStatus("");
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    closeBtn.focus();
   }
 
-  attendingInputs.forEach(function (input) {
-    input.addEventListener("change", toggleGuestCount);
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
   });
-  toggleGuestCount();
+
+  modalDialog.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -48,15 +69,13 @@ const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
     const payload = {
       timestamp: new Date().toISOString(),
       fullName: formData.get("fullName")?.trim() || "",
-      email: formData.get("email")?.trim() || "",
       phone: formData.get("phone")?.trim() || "",
       attending: formData.get("attending") || "",
       guestCount: formData.get("guestCount") || "",
-      dietary: formData.get("dietary")?.trim() || "",
       message: formData.get("message")?.trim() || "",
     };
 
-    if (!payload.fullName || !payload.email || !payload.attending) {
+    if (!payload.fullName || !payload.attending) {
       setStatus("Please fill in all required fields.", "error");
       return;
     }
@@ -65,17 +84,16 @@ const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
     try {
       const body = new URLSearchParams({ payload: JSON.stringify(payload) });
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
 
-      // no-cors returns opaque response; treat as success if no network error
       form.reset();
-      toggleGuestCount();
       setStatus("Thank you! Your RSVP has been received.", "success");
+      setTimeout(closeModal, 2200);
     } catch (err) {
       setStatus("Something went wrong. Please try again or contact the host.", "error");
       console.error(err);
