@@ -1,0 +1,371 @@
+:root {
+  --pearl-white: #faf8f6;
+  --pearl-cream: #f3efe8;
+  --pearl-blush: #e8d4d0;
+  --pearl-lavender: #d8d0e4;
+  --pearl-mint: #d4e8e4;
+  --pearl-gold: #c9b896;
+  --pearl-rose: #c4a4a8;
+  --pearl-slate: #6b6570;
+  --pearl-deep: #4a4450;
+  --shadow-soft: 0 12px 40px rgba(74, 68, 80, 0.12);
+  --shadow-pearl: 0 4px 24px rgba(201, 184, 150, 0.25);
+  --radius: 20px;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--pearl-deep);
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(232, 212, 208, 0.55), transparent 50%),
+    radial-gradient(ellipse 70% 45% at 85% 20%, rgba(216, 208, 228, 0.5), transparent 45%),
+    radial-gradient(ellipse 60% 40% at 50% 90%, rgba(212, 232, 228, 0.45), transparent 50%),
+    linear-gradient(165deg, #f8f4f0 0%, #efe8e2 35%, #e6dfe8 70%, #ebe6f0 100%);
+  padding: 2rem 1rem 3rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Floating pearl orbs */
+.pearls {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pearl {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 28%, #fff 0%, rgba(255, 255, 255, 0.7) 25%, transparent 55%),
+    radial-gradient(circle at 70% 75%, rgba(201, 184, 150, 0.35) 0%, transparent 50%),
+    linear-gradient(145deg, #f5f0ea, #d8cfc4);
+  box-shadow:
+    inset -4px -6px 12px rgba(255, 255, 255, 0.9),
+    inset 4px 4px 10px rgba(180, 165, 150, 0.2),
+    var(--shadow-pearl);
+  opacity: 0.75;
+  animation: float 12s ease-in-out infinite;
+}
+
+.pearl-1 { width: 72px; height: 72px; top: 8%; left: 6%; animation-delay: 0s; }
+.pearl-2 { width: 48px; height: 48px; top: 22%; right: 10%; background: linear-gradient(145deg, #f0e8f4, #c8bdd8); animation-delay: -2s; }
+.pearl-3 { width: 56px; height: 56px; bottom: 30%; left: 4%; background: linear-gradient(145deg, #e8f4f0, #b8d4cc); animation-delay: -4s; }
+.pearl-4 { width: 40px; height: 40px; top: 55%; right: 6%; animation-delay: -1s; }
+.pearl-5 { width: 64px; height: 64px; bottom: 12%; right: 15%; background: linear-gradient(145deg, #f8ece8, #d4b8b4); animation-delay: -3s; }
+.pearl-6 { width: 36px; height: 36px; top: 40%; left: 12%; animation-delay: -5s; }
+.pearl-7 { width: 52px; height: 52px; bottom: 45%; right: 22%; background: linear-gradient(145deg, #f4eef8, #d0c4dc); animation-delay: -2.5s; }
+.pearl-8 { width: 44px; height: 44px; top: 75%; left: 18%; animation-delay: -6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-14px) scale(1.03); }
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 248, 246, 0.95) 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.hero {
+  position: relative;
+  min-height: 280px;
+}
+
+.photo-frame {
+  position: absolute;
+  inset: 1.25rem 1.25rem 0;
+  border-radius: calc(var(--radius) - 4px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.frame-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--pearl-gold), var(--pearl-blush), var(--pearl-lavender), var(--pearl-mint));
+  opacity: 0.65;
+  filter: blur(1px);
+}
+
+.hero-photo {
+  display: block;
+  width: calc(100% - 2.5rem);
+  height: 240px;
+  margin: 1.25rem auto 0;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 6px);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-pearl);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1.5rem 1.25rem;
+  background: linear-gradient(to top, rgba(74, 68, 80, 0.82) 0%, rgba(74, 68, 80, 0.4) 55%, transparent 100%);
+  color: var(--pearl-white);
+  text-align: center;
+  z-index: 3;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+  opacity: 0.9;
+}
+
+.hero-overlay h1 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin: 0.25rem 0 0.5rem;
+  color: var(--pearl-blush);
+}
+
+.event-date {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.form-section {
+  padding: 1.75rem 1.5rem 1.5rem;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(232, 212, 208, 0.15) 50%, transparent 100%),
+    linear-gradient(180deg, var(--pearl-white) 0%, var(--pearl-cream) 100%);
+}
+
+.form-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  text-align: center;
+  color: var(--pearl-deep);
+}
+
+.form-intro {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--pearl-slate);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.field {
+  margin-bottom: 1.1rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pearl-slate);
+  margin-bottom: 0.4rem;
+}
+
+.req {
+  color: var(--pearl-rose);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--pearl-deep);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(201, 184, 150, 0.35);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--pearl-gold);
+  box-shadow: 0 0 0 3px rgba(201, 184, 150, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.radio-pill {
+  flex: 1 1 auto;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.radio-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-pill span {
+  display: block;
+  padding: 0.65rem 0.85rem;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 184, 150, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s;
+}
+
+.radio-pill input:checked + span {
+  background: linear-gradient(135deg, var(--pearl-blush), var(--pearl-lavender));
+  border-color: transparent;
+  color: var(--pearl-deep);
+  font-weight: 500;
+  box-shadow: var(--shadow-pearl);
+}
+
+.radio-pill input:focus-visible + span {
+  outline: 2px solid var(--pearl-gold);
+  outline-offset: 2px;
+}
+
+#guestCountField.hidden {
+  display: none;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pearl-white);
+  background: linear-gradient(135deg, var(--pearl-rose) 0%, #a89094 50%, var(--pearl-slate) 100%);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-pearl);
+  transition: transform 0.2s, opacity 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.form-status {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 1.25rem;
+}
+
+.form-status.success {
+  color: #5a7a6a;
+}
+
+.form-status.error {
+  color: #9a5a5a;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--pearl-slate);
+  background: linear-gradient(90deg, var(--pearl-mint) 0%, var(--pearl-lavender) 50%, var(--pearl-blush) 100%);
+  opacity: 0.85;
+}
+
+@media (min-width: 540px) {
+  body {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-photo {
+    height: 280px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.85rem;
+  }
+}

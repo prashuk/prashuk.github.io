@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Baby shower photo placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8d4d0"/>
+      <stop offset="35%" style="stop-color:#f3efe8"/>
+      <stop offset="65%" style="stop-color:#d8d0e4"/>
+      <stop offset="100%" style="stop-color:#d4e8e4"/>
+    </linearGradient>
+    <radialGradient id="pearl" cx="35%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.95"/>
+      <stop offset="100%" style="stop-color:#e6dfd6;stop-opacity:0.6"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="120" cy="90" r="28" fill="url(#pearl)" opacity="0.9"/>
+  <circle cx="680" cy="120" r="22" fill="url(#pearl)" opacity="0.85"/>
+  <circle cx="700" cy="380" r="34" fill="url(#pearl)" opacity="0.8"/>
+  <circle cx="90" cy="400" r="20" fill="url(#pearl)" opacity="0.75"/>
+  <text x="400" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#6b6570">Add your photo</text>
+  <text x="400" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9a929c">Replace assets/baby-shower-photo.jpg</text>
+</svg>
