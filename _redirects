@@ -1,0 +1,4 @@
+# Serve /babyshower from GitHub Pages until Netlify picks up the new files
+# (remove these lines after a successful Netlify deploy includes babyshower/)
+/babyshower     https://prashuk.github.io/babyshower/     200
+/babyshower/*   https://prashuk.github.io/babyshower/:splat  200
