@@ -1,5 +1,5 @@
 // Paste your Google Apps Script Web App URL here (see README.md)
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-JT7070PiL_40xbvB8Lzt_0vGfP8CS92H2yi-_QN6KVI7TpJzZxtAB8kXw/exec";
 
 (function () {
   const form = document.getElementById("rsvpForm");
