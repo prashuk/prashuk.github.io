@@ -1,4 +1,0 @@
-# prashuk.co is served by Netlify (not GitHub Pages). Publish the full repo root
-# so paths like /babyshower/ are included in each deploy.
-[build]
-  publish = "."

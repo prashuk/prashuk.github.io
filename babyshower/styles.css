@@ -142,6 +142,7 @@ body {
 
 .hero {
   position: relative;
+  overflow: visible;
 }
 
 .photo-frame {
@@ -151,6 +152,8 @@ body {
 .hero-photo {
   display: block;
   width: 100%;
+  /* Make the image fully visible without cropping */
+  /* Restore hero sizing so overlay can sit on top */
   height: min(58vh, 420px);
   min-height: 320px;
   margin: 0;
@@ -166,21 +169,26 @@ body {
 }
 
 .hero-overlay {
+  /* Overlay on top of the hero image */
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
-  padding: 3rem 1.5rem 1.5rem;
+  bottom: 0;
+  /* add extra top padding so tall glyphs aren't clipped */
+  padding: 6.5rem 1.5rem 2rem;
   background: linear-gradient(
     to top,
-    rgba(58, 48, 72, 0.88) 0%,
-    rgba(88, 72, 108, 0.55) 40%,
-    rgba(120, 160, 180, 0.2) 70%,
+    rgba(20, 18, 24, 0.56) 0%,
+    rgba(20, 18, 24, 0.32) 40%,
+    rgba(20, 18, 24, 0.06) 75%,
     transparent 100%
   );
   color: var(--pearl-white);
   text-align: center;
-  z-index: 3;
+  z-index: 6;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow: visible;
 }
 
 .eyebrow {
@@ -189,21 +197,34 @@ body {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   margin: 0 0 0.35rem;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.96);
+  opacity: 1;
+  text-shadow: 0 1px 3px rgba(20, 18, 24, 0.6);
+  letter-spacing: 0.4em;
 }
 
 .hero-title {
   font-family: var(--font-script);
-  font-size: 3.25rem;
+  font-size: 3.75rem;
   font-weight: 400;
   margin: 0;
-  line-height: 1.05;
-  letter-spacing: 0.02em;
-  color: #fff;
-  text-shadow:
-    0 2px 8px rgba(58, 48, 72, 0.45),
-    0 0 32px rgba(245, 212, 200, 0.35);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  /* Decorative gradient fill with subtle stroke and glow */
+  background: linear-gradient(100deg, #fff8f0 0%, #ffe8d0 35%, #f8e0c8 60%, #fff6ec 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: white;
+  -webkit-text-stroke: 0.36px rgba(20,18,24,0.16);
+  text-shadow: 0 6px 22px rgba(168,124,96,0.14);
+  transform-origin: center;
+  display: inline-block;
+  padding: 0 0.75rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
 }
+
+/* Underline removed for a cleaner hero title */
 
 .subtitle {
   display: flex;
@@ -217,8 +238,11 @@ body {
   margin: 0.4rem 0 0.55rem;
   line-height: 1.35;
 }
-
-.subtitle-part {
+  -webkit-text-stroke: 0.36px rgba(20,18,24,0.16);
+  text-shadow: 0 6px 22px rgba(168,124,96,0.14);
+  display: inline-block;
+  padding: 0 0.25rem;
+  transform: translateZ(0);
   font-size: 1.15rem;
   font-weight: 600;
   font-style: italic;
@@ -242,9 +266,9 @@ body {
   font-size: 1.15rem;
   font-weight: 400;
   font-style: italic;
-  color: #fff4ec;
-  opacity: 0.88;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  color: #fff6ec;
+  opacity: 0.95;
+  text-shadow: 0 1px 3px rgba(20, 18, 24, 0.45);
 }
 
 .event-date {
@@ -777,7 +801,7 @@ textarea {
   }
 
   .hero-title {
-    font-size: 3.75rem;
+    font-size: 4.5rem;
   }
 
   .subtitle,
