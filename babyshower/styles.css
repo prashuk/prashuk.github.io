@@ -175,7 +175,7 @@ body {
   right: 0;
   bottom: 0;
   /* add extra top padding so tall glyphs aren't clipped */
-  padding: 6.5rem 1.5rem 2rem;
+  padding: 6.5rem 1.5rem 0.5rem;
   background: linear-gradient(
     to top,
     rgba(20, 18, 24, 0.56) 0%,
@@ -240,13 +240,13 @@ body {
 }
 
 .subtitle-part {
-  -webkit-text-stroke: 0.36px rgba(20,18,24,0.16);
-  text-shadow: 0 6px 22px rgba(168,124,96,0.14);
+  -webkit-text-stroke: 0; /* remove stroke/border */
+  text-shadow: none; /* remove strong shadow border */
   display: inline-block;
   padding: 0 0.25rem;
   transform: translateZ(0);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 1000;
   font-style: italic;
   letter-spacing: 0.04em;
   background: linear-gradient(
@@ -259,9 +259,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 14px rgba(245, 212, 200, 0.75))
-    drop-shadow(0 0 22px rgba(168, 224, 216, 0.4))
-    drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 0 8px rgba(245, 212, 200, 0.45));
 }
 
 .subtitle-join {
