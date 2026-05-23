@@ -184,6 +184,7 @@ body {
     transparent 100%
   );
   color: var(--pearl-white);
+  font-weight: 700;
   text-align: center;
   z-index: 6;
   padding-left: 2rem;
@@ -206,7 +207,7 @@ body {
 .hero-title {
   font-family: var(--font-script);
   font-size: 3.75rem;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0;
   line-height: 1.02;
   letter-spacing: 0.01em;
@@ -264,7 +265,7 @@ body {
 
 .subtitle-join {
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 700;
   font-style: italic;
   color: #fff6ec;
   opacity: 0.95;
