@@ -194,11 +194,11 @@ body {
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 200;
+  font-size: 0.6rem;
+  font-weight: 500;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.4rem;
   color: rgba(255, 255, 255, 0.96);
   opacity: 1;
   text-shadow: 0 1px 3px rgba(20, 18, 24, 0.6);
@@ -803,12 +803,12 @@ textarea {
   }
 
   .hero-title {
-    font-size: 3.25rem;
+    font-size: 4.25rem;
   }
 
   .subtitle,
   .subtitle-part,
   .subtitle-join {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
 }
