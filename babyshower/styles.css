@@ -238,6 +238,8 @@ body {
   margin: 0.4rem 0 0.55rem;
   line-height: 1.35;
 }
+
+.subtitle-part {
   -webkit-text-stroke: 0.36px rgba(20,18,24,0.16);
   text-shadow: 0 6px 22px rgba(168,124,96,0.14);
   display: inline-block;
