@@ -194,10 +194,11 @@ body {
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 200;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.3rem;
   color: rgba(255, 255, 255, 0.96);
   opacity: 1;
   text-shadow: 0 1px 3px rgba(20, 18, 24, 0.6);
@@ -206,8 +207,8 @@ body {
 
 .hero-title {
   font-family: var(--font-script);
-  font-size: 3.75rem;
-  font-weight: 700;
+  font-size: 4.75rem;
+  font-weight: 400;
   margin: 0;
   line-height: 1.02;
   letter-spacing: 0.01em;
@@ -221,8 +222,8 @@ body {
   transform-origin: center;
   display: inline-block;
   padding: 0 0.75rem;
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 /* Underline removed for a cleaner hero title */
