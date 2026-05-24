@@ -13,6 +13,24 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-J
   const backdrop = document.getElementById("modalBackdrop");
   const modalDialog = modal.querySelector(".modal-dialog");
 
+  // Guest count controls
+  const guestField = document.getElementById("guestCountField");
+  const guestSelect = document.getElementById("guestCount");
+  const attendingRadios = Array.from(document.querySelectorAll('input[name="attending"]'));
+
+  function updateGuestVisibility() {
+    const checked = attendingRadios.find((r) => r.checked);
+    const attending = checked ? checked.value : "";
+    const isNo = attending === "No";
+    // hide the guest count UI when not attending
+    if (guestField) guestField.hidden = isNo;
+    if (guestSelect) guestSelect.disabled = isNo;
+  }
+
+  attendingRadios.forEach((r) => r.addEventListener("change", updateGuestVisibility));
+  // initialize on load
+  updateGuestVisibility();
+
   function setLoading(loading) {
     submitBtn.disabled = loading;
     btnText.hidden = loading;
@@ -30,6 +48,8 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-J
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
     closeBtn.focus();
+    // ensure guest field visibility matches current selection when opening
+    updateGuestVisibility();
   }
 
   function closeModal() {
@@ -37,6 +57,7 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-J
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
     openBtn.focus();
+    // keep form values so the guest count visibility persists on reopen
   }
 
   openBtn.addEventListener("click", openModal);
@@ -66,12 +87,15 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-J
     }
 
     const formData = new FormData(form);
+    const attending = formData.get("attending") || "";
+    const guestCountValue = attending === "No" ? "0" : formData.get("guestCount") || "";
+
     const payload = {
       timestamp: new Date().toISOString(),
       fullName: formData.get("fullName")?.trim() || "",
       phone: formData.get("phone")?.trim() || "",
-      attending: formData.get("attending") || "",
-      guestCount: formData.get("guestCount") || "",
+      attending: attending,
+      guestCount: guestCountValue,
       message: formData.get("message")?.trim() || "",
     };
 
