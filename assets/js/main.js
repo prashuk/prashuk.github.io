@@ -138,22 +138,6 @@
     return false;
   });
 
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000,
-  });
-
-  $(".skills-content").waypoint(
-    function () {
-      $(".progress .progress-bar").each(function () {
-        $(this).css("width", $(this).attr("aria-valuenow") + "%");
-      });
-    },
-    {
-      offset: "80%",
-    }
-  );
-
   function aos_init() {
     AOS.init({
       duration: 1000,
