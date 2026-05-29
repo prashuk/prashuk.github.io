@@ -7,6 +7,7 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-J
   const btnText = submitBtn.querySelector(".btn-text");
   const btnSpinner = submitBtn.querySelector(".btn-spinner");
   const formStatus = document.getElementById("formStatus");
+  const sendingOverlay = document.getElementById("sendingOverlay");
   const modal = document.getElementById("rsvpModal");
   const openBtn = document.getElementById("openRsvpBtn");
   const closeBtn = document.getElementById("closeRsvpBtn");
@@ -35,6 +36,10 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwei97Rlz-H-J
     submitBtn.disabled = loading;
     btnText.hidden = loading;
     btnSpinner.hidden = !loading;
+    if (sendingOverlay) {
+      sendingOverlay.hidden = !loading;
+      sendingOverlay.setAttribute("aria-hidden", String(!loading));
+    }
   }
 
   function setStatus(message, type) {
