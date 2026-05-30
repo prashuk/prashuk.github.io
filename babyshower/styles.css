@@ -207,7 +207,7 @@ body {
 
 .hero-title {
   font-family: 'Great Vibes', var(--font-script);
-  font-size: 5.0rem;
+  font-size: 4.0rem;
   font-weight: 500;
   margin: 0;
   line-height: 1.02;
@@ -230,7 +230,7 @@ body {
   gap: 0.35rem 0.45rem;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   margin: 0.2rem;
   line-height: 1.35;
 }
@@ -266,7 +266,7 @@ body {
 }
 
 .event-date {
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.06em;
   margin: 0 0 0.35rem;
   opacity: 0.75;
@@ -277,7 +277,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.04em;
   line-height: 1.45;
   margin: 0;
@@ -836,11 +836,5 @@ textarea {
   .hero-photo {
     height: min(62vh, 520px);
     min-height: 400px;
-  }
-
-  .subtitle,
-  .subtitle-part,
-  .subtitle-join {
-    font-size: 2rem;
   }
 }
